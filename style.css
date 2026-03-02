@@ -1,0 +1,521 @@
+
+/* --- Barre de navigation Professionnelle --- */
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between; /* Espace automatique entre logo et menu */
+    padding: 10px 5%;
+    background: rgba(16, 30, 100, 0.8);
+    backdrop-filter: blur(8px); /* Effet flou moderne */
+    position: sticky;
+    top: 0;
+    width: 100%;
+    z-index: 1000;
+    box-sizing: border-box;
+    border-bottom: 1px solid rgba(15, 205, 238, 0.3);
+}
+
+.logo {
+    font-size: 1.5rem;
+    font-family: 'Orbitron', sans-serif;
+    color: white;
+}
+
+header nav ul {
+    display: flex;
+    list-style: none;
+    gap: 30px;
+    margin: 0;
+    padding: 0;
+}
+
+header nav ul li a {
+    text-decoration: none;
+    color: rgb(15, 205, 238);
+    font-family: 'roboto', sans-serif;
+    font-size: 18px;
+    transition: 0.3s;
+}
+
+header nav ul li a:hover {
+    color: #4aff02;
+    text-shadow: 0 0 8px #4aff02;
+}
+
+/* --- Menu Mobile (Caché sur PC) --- */
+.menu-checkbox {
+    display: none;
+}
+
+.hamburger {
+    display: none; /* Caché sur PC */
+    flex-direction: column;
+    gap: 5px;
+    cursor: pointer;
+}
+
+.hamburger span {
+    width: 25px;
+    height: 3px;
+    background: rgb(15, 205, 238);
+    border-radius: 2px;
+}
+
+/* --- RESPONSIVE (Tablettes et Mobiles) --- */
+@media (max-width: 768px) {
+    .hamburger {
+        display: flex; /* Apparaît sur mobile */
+    }
+
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 20, 60, 0.95);
+        display: none; /* Masqué par défaut */
+        padding: 20px 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    /* Affiche le menu quand on clique sur le hamburger */
+    .menu-checkbox:checked ~ nav {
+        display: block;
+    }
+
+    /* Ajustement des sections pour mobile */
+    .mon-conteneur {
+        flex-direction: column;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .image-droite {
+        max-width: 60%;
+        order: -1; /* Met l'image au-dessus du texte sur mobile */
+    }
+
+    .texte-gauche {
+        text-align: center;
+        font-size: 30px;
+    }
+}
+
+body{
+    background: transparent; 
+    color: azure;
+
+}
+
+a{
+    color: rgb(15, 205, 238);
+    font-family: 'roboto',sans-serif;
+    font-weight: 300;
+    font-size:   23px;
+}
+.mon-conteneur {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 20px;
+  /* --- Le style de la "Box" --- */
+  background-color: #060c2b34; /* Une couleur de fond légère */
+  border: 1px solid #13ebeb41;    /* Une bordure fine */
+  border-radius: 12px;       /* Des coins arrondis pour la modernité */
+  padding: 25px;             /* De l'espace à l'intérieur de la boîte */
+  box-shadow: 5 4px 10px rgba(0, 0, 0, 0.1); /* Une petite ombre pour le relief */
+  transition:transform .3s,box-shadow .3s;
+  /* Optionnel : limiter la largeur de la boîte pour qu'elle ne prenne pas tout l'écran */
+  max-width: 900px;
+  margin: 20px auto;         /* Centre la boîte horizontalement dans la page */
+}
+.mon-conteneur:hover{
+ transform: translateY(-10px) scale(1.05);
+  box-shadow:inset 0 15px 30px rgb(7, 67, 102);
+}
+@keyframes float{
+  0%{transform: translateY(0);}
+  50%{transform: translateY(-15px);}
+  100%{transform: translateY(0);}
+}
+.texte-gauche {
+  flex: 1;
+  text-align: right;
+  font-style: italic;
+  color: rgba(19, 84, 168, 0.685);
+  font-size: 45px;
+  font-family: 'Abril Fatface',cursive;
+}
+
+.image-droite {
+  max-width: 35%;
+  height: auto;
+  animation:float 3s ease ease-in-out infinite;
+  width: 220px;      /* Largeur fixe */
+    height: 220px;     /* Hauteur identique pour un carré */
+    object-fit: cover; /* Important : empêche l'image de se déformer */
+    
+    /* --- L'ARRONDI --- */
+    border-radius: 55%; /* Transforme le carré en cercle */
+    
+    /* --- LE CONTOUR (Bordure) --- */
+    border: 1px solid #6bdcff75; /* Une bordure épaisse de couleur */
+    padding: 0%;               /* Optionnel : un petit espace entre l'image et la bordure */
+     transition: all 0.3s ease;
+  animation: float 4s infinite; 
+}
+
+#apropos{
+    font-size: 30px;
+      background-color: #ffffff1e;    /* Fond blanc (ou autre) */
+  border: 1px solid #e0e0e02d;    /* Bordure fine et discrète */
+  border-radius: 15px;          /* Angles arrondis */
+  box-shadow: 4 4px 15px rgba(4, 146, 122, 0.137); /* Ombre portée douce */
+color: rgba(8, 8, 218, 0.651);
+ 
+  font-family:'Orbitron',sans-serif;font-size:25px;color:var(--neon);
+}
+/* --- Style Minimaliste "Expertise" --- */
+#competence-section {
+    padding: 80px 10%;
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+#competence {
+    font-family: 'Inter', sans-serif; /* Utilise une police simple */
+    font-size: 14px;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    color: rgba(255, 255, 255, 0.5); /* Couleur atténuée */
+    margin-bottom: 40px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+    padding-bottom: 10px;
+    text-align: left;
+}
+
+.minimal-list {
+    display: flex;
+    flex-direction: column;
+}
+
+.skill-item {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    transition: all 0.3s ease;
+}
+
+.skill-item:hover {
+    padding-left: 10px;
+    border-bottom-color: #0fcdf3;
+}
+
+.skill-name {
+    font-family: 'Roboto', sans-serif;
+    font-size: 1.2rem;
+    font-weight: 300;
+    color: #fff;
+}
+
+.skill-level {
+    font-family: 'Roboto', sans-serif;
+    font-size: 0.8rem;
+    color: rgba(15, 205, 238, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    border: 1px solid rgba(15, 205, 238, 0.3);
+    padding: 4px 12px;
+    border-radius: 20px;
+}
+
+/* --- Responsive --- */
+@media (max-width: 600px) {
+    .skill-item {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 10px;
+    }
+}
+#apropos .page {
+    margin-top: 0;          /* Colle le titre en haut de sa section */
+  font-size: 2.5rem;      /* Rend le titre bien visible */
+
+/* .page{
+    width: 100%;            /* Force le paragraphe à utiliser toute la largeur */
+  /* margin: 20px 0;         Espace entre le titre et le texte */
+  line-height: 1.6;       /* Améliore la lisibilité */
+/*} */
+text-align:center;
+}
+.page{
+    width: 100%;            /* Prend toute la largeur disponible */
+  text-align: center;     /* Centre le texte (titre et paragraphe) */
+  padding: 50px 0;        /* Ajoute de l'espace en haut et en bas */
+  background-color: #292424; /* Optionnel : juste pour voir la zone */
+}
+span{
+  color: #4aff02;
+  font-family: 'roboto',sans-serif;
+}
+.formation ul{
+color: #5bf362e1;
+font-family: 'Pacifico',cursive;
+font-size: 30px;
+text-align: left;
+}
+.formation div{
+  text-align: right;
+  font-size: 30px;
+  color: rgb(53, 93, 150);
+  font-family: 'Oswald',sans-serif;
+  
+
+}
+.formation{
+  background:linear-gradient(rgba(70, 64, 64, 0.164),rgba(20, 51, 92, 0.199));
+   margin-top: 0;          /* Colle le titre en haut de sa section */
+  font-size: 2.5rem;      /* Rend le titre bien visible */
+
+/* .page{
+    width: 100%;            /* Force le paragraphe à utiliser toute la largeur */
+  /* margin: 20px 0;         Espace entre le titre et le texte */
+  line-height: 1.6;       /* Améliore la lisibilité */
+/*} */
+}
+/* --- Section Contact Professionnelle --- */
+#contact {
+    padding: 80px 20px;
+    text-align: center;
+    margin: 40px auto;
+    max-width: 1000px;
+}
+
+.contact-title {
+    font-family: 'Orbitron', sans-serif; /* */
+    color: #4aff02;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    margin-bottom: 50px;
+}
+
+.contact-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 25px;
+}
+
+.contact-card {
+    background: rgba(15, 205, 238, 0.05); /* Utilise ton bleu cyan en transparence */
+    border: 1px solid rgba(15, 205, 238, 0.2);
+    border-radius: 8px;
+    padding: 30px;
+    width: 220px;
+    text-decoration: none;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.contact-card:hover {
+    background: rgba(15, 205, 238, 0.15);
+    border-color: #4aff02;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+}
+
+.contact-label {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 0.8rem;
+    color: #4aff02;
+    letter-spacing: 2px;
+}
+
+.contact-value {
+    font-family: 'Roboto', sans-serif; /* */
+    color: #ffffff;
+    font-size: 1.1rem;
+    font-weight: 400;
+}
+
+/* --- Responsive --- */
+@media (max-width: 768px) {
+    .contact-container {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .contact-card {
+        width: 90%;
+        padding: 20px;
+    }
+}
+#apropos .passions-stack {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 15px;
+  justify-content: center;
+    transition:transform .3s,box-shadow .3s;
+}
+
+.passion-badge {
+  background: rgba(255,255,255,0.1);
+  backdrop-filter: blur(10px);
+  border-radius: 50px;
+  padding: 12px 25px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid rgba(255,255,255,0.2);
+  transition: all 0.3s ease;
+  animation: float 4s infinite;
+}
+
+.passion-badge:hover {
+  transform: translateY(-10px) scale(1.05);
+  background: rgba(255, 255, 255, 0.048);
+  box-shadow: 0 15px 30px rgb(20, 20, 148);
+}
+
+.passion-badge .icon {
+  font-size: 24px;
+}
+
+.passion-badge .label {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  color: rgb(22, 165, 165);
+}
+#bg-video {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Pour que la vidéo remplisse tout l'écran sans se déformer */
+    z-index: -1; /* Place la vidéo derrière tout le reste */
+    filter: brightness(40%); /* Optionnel : assombrit la vidéo pour que ton texte reste lisible */
+    opacity: 0.9;
+}
+/* --- RESPONSIVE GLOBAL --- */
+@media (max-width: 768px) {
+    /* 1. Header & Nav */
+    .hamburger {
+        display: flex !important; /* Affiche le bouton menu */
+    }
+
+    header nav {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        width: 100%;
+        background: rgba(10, 20, 60, 0.98);
+        display: none; 
+        padding: 20px 0;
+    }
+
+    header nav ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+        margin-right: 0;
+    }
+
+    .menu-checkbox:checked ~ nav {
+        display: block; /* Ouvre le menu au clic */
+    }
+
+    /* 2. Section Bienvenue (Image + Texte) */
+    .mon-conteneur {
+        display: flex !important;
+        flex-direction: column-reverse !important; /* Met l'image au-dessus du texte */
+        align-items: center !important;
+        text-align: center !important;
+        height: auto !important; /* Permet au contenu de s'étendre */
+        padding-top: 80px !important; /* Évite que le texte soit sous le header */
+    }
+
+    .texte-gauche {
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 20px !important;
+    }
+
+    .texte-gauche h2 {
+        font-size: 35px !important; /* Réduit la taille pour mobile */
+        line-height: 1.2;
+    }
+
+    .texte-gauche h3 {
+        font-size: 25px !important;
+    }
+
+    .image-droite {
+        max-width: 70% !important; /* L'image ne doit pas être trop grande */
+        height: auto !important;
+        margin-bottom: 20px;
+    }
+}
+
+    /* 3. Section À Propos & Passion */
+    #apropos {
+        width: 95%;
+        padding: 15px;
+    }
+
+    #apropos h4 {
+        font-size: 24px;
+        text-align: center;
+    }
+
+    /* 4. Section Compétences (Grille) */
+    .container-competences {
+        display: grid;
+        grid-template-columns: 1fr; /* Une seule colonne sur mobile */
+        gap: 15px;
+        padding: 10px;
+    }
+
+    .card {
+        width: 100% !important;
+        margin: 5px 0;
+    }
+
+    /* 5. Section Contact */
+    #contact ul {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+#competence {
+        text-align: center !important; /* Centre le titre sur mobile */
+        margin-top: 50px !important;    /* Ajoute de l'espace au-dessus */
+        margin-bottom: 30px !important; /* Ajoute de l'espace avant les cartes */
+        font-size: 28px !important;     /* Réduit légèrement la taille pour petit écran */
+        width: 100%;
+        display: block;
+    }
+
+    .container-competences {
+        display: grid;
+        grid-template-columns: 1fr; /* Une seule colonne de cartes sur mobile */
+        gap: 20px;
+        padding: 10px;
+        justify-items: center; /* Centre les cartes horizontalement */
+    }
+
+    .card {
+        width: 90% !important; /* Les cartes prennent presque toute la largeur */
+        margin: 0 auto;
+    }
+
+
